@@ -1,0 +1,56 @@
+{
+  "basicInfo": {
+    "command": "DD A5 03 00 FF FD 77",
+    "replyDataStringBytes": {
+      "overall_voltage": {
+        "from": 0,
+        "to": 2
+      },
+      "overall_current": {
+        "from": 2,
+        "to": 4
+      },
+      "residual_capacity": {
+        "from": 4,
+        "to": 6
+      },
+      "nominal_capacity": {
+        "from": 6,
+        "to": 8
+      },
+      "cycle_times": {
+        "from": 8,
+        "to": 10
+      },
+      "rsoc": {
+        "from": 19,
+        "to": 20
+      },
+      "battery_serial_number": {
+        "from": 21,
+        "to": 22
+      },
+      "ntc_quantity": {
+        "from": 22,
+        "to": 23
+      }
+    }
+  },
+  "vendor": {
+    "command": "DD A5 05 00 FF FB 77"
+  },
+  "cellsInfo": {
+    "command": "DD A5 04 00 FF FC 77"
+  },
+  "settings": {
+    "commandSequence": ["DD A5 03 00 FF FD 77", "DD A5 04 00 FF FC 77", "DD 5A 00 02 56 78 FF 30 77"],
+    "registers": {
+      "overvoltage_release": {
+        "command": "dd a5 25 00 ff db 77"
+      },
+      "overvoltage_protection": {
+        "command": "dd a5 24 00 ff dc 77"
+      }
+    }
+  }
+}
