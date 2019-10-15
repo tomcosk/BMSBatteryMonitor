@@ -28,6 +28,12 @@ def crccalc(data):
     return crc
 
 
+def rdjson(file):
+    with open(file, "r") as read_file:
+        data = json.load(read_file)
+    return data
+
+
 def openbms(port='/dev/ttyUSB0'):
     ser = serial.Serial(port)  # open serial port
     ser.timeout = 3
